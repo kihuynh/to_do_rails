@@ -10,6 +10,7 @@ go into the project folder
 ```
 $ rake db:create
 $ rake db:migrate db:test:prepare
+$ bundle install
 ```
 Run the rails server
 `
