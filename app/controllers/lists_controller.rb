@@ -1,17 +1,14 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
-    render :index
   end
 
   def show
     @list = List.find(params[:id])
-    render :show
   end
 
   def new
     @list = List.new
-    render :new
   end
 
   def create
@@ -34,9 +31,9 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
-      redirect_to 
-    else
-      render :edit
+      redirect_to lists_path
+    # else
+    #   render :edit
     end
   end
 
