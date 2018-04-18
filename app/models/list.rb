@@ -8,6 +8,8 @@ class List < ActiveRecord::Base
     .order("tasks_count DESC")
     .limit(10)
     )}
-    
+
+  scope :search, -> (name_parameter) { where("name like?", "%##{name_parameter}")}
+
   validates :name, :presence => true
 end
